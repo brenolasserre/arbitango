@@ -64,9 +64,10 @@ const Stack = () => {
 
           <div className="relative flex w-fit justify-center ">
             <motion.button
+              aria-label="Tarjeta anterior"
               className="z-40 mx-2 h-5 w-5 cursor-pointer"
               onClick={handlePrevClick}
-              style={{ color: "#B5B3AD" }}
+              style={{ color: "#7A7A7A" }}
               whileTap={{ scale: 0.9, color: "#EEEEEC" }}
               whileHover={{ opacity: 0.7 }}
               transition={{ ease: easeInOut, duration: 0.075 }}
@@ -86,9 +87,10 @@ const Stack = () => {
               </svg>
             </motion.button>
             <motion.button
+              aria-label="Siguiente Tarjeta"
               className="z-40 mx-2 h-5 w-5 cursor-pointer"
               onClick={handleNextClick}
-              style={{ color: "#B5B3AD" }}
+              style={{ color: "#7A7A7A" }}
               whileTap={{ scale: 0.9, color: "#EEEEEC" }}
               whileHover={{ opacity: 0.7 }}
               transition={{ ease: easeInOut, duration: 0.1 }}
@@ -172,7 +174,7 @@ const Stack = () => {
                   }}
                   layout
                 >
-                  <p className="text-[#AAACB5] font-medium m-0 text-lg">
+                  <p className="text-[#7d7d7d] font-medium m-0 text-lg">
                     {card.tipo}
                   </p>
 
@@ -192,7 +194,7 @@ const Stack = () => {
                     </div>
 
                     <div className="flex flex-col items-end">
-                      <p className="text-[#737581] text-xs font-medium">
+                      <p className="text-[#7D7F8C] text-xs font-medium">
                         BTC 1,00
                       </p>
                       <p className="text-[#CFD1DA] font-semibold">$60.842,50</p>
