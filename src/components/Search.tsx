@@ -26,7 +26,7 @@ const Search = () => {
     <>
       <nav
         onClick={() => setOpen(true)}
-        className="mx-auto cursor-pointer hover:bg-[#0f0f0e] transition-all flex !items-center justify-between gap-4 text-[#8C8C8C] bg-[#111110] border-[1px] border-[#1D1D1C] font-medium w-2/3 lg:w-1/3 px-4 pl-5 py-3 rounded-2xl"
+        className=" mx-auto cursor-pointer hover:bg-[#0f0f0e] transition-all flex !items-center justify-between gap-4 text-[#8C8C8C] bg-[#111110] border border-[#1D1D1C] font-medium w-2/3 text-sm lg:w-1/3 px-4 pl-5 py-3 rounded-2xl"
       >
         <span className="flex items-center gap-3">
           <svg width="16" height="16" fill="none">
@@ -46,34 +46,34 @@ const Search = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <p className="text-[1rem]">Buscá por nombre o ticker..</p>
+          <p className="text-md opacity-90">Buscá por nombre..</p>
         </span>
-        <span className="lg:block md:hidden font-mono border border-[#161616] px-3 text-[.875rem] bg-[#0D0D0D] text-[#7D7D7D] rounded-lg">
+        <span className="lg:block hidden font-mono border border-[#161616] px-3 text-[.875rem] bg-[#0D0D0D] text-[#7D7D7D] rounded-lg">
           Cmd + K
         </span>
       </nav>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Buscá por nombre o ticker.." />
+        <CommandInput placeholder="Buscá por nombre.." />
         <CommandList>
           <CommandEmpty>No se encontraron resultados</CommandEmpty>
           <CommandGroup heading="Monedas">
             <CommandItem>
-              <img src="/coins/btc.svg" loading="eager" alt="Bitcoin" />
+              <img width={20} height={20} src="/coins/btc.svg" alt="Bitcoin" />
               <span className="flex items-baseline gap-2 font-semibold text-[13px] m-0 text-[#B5B3AD]">
-                <p className="font-bold text-[#EEEEEC] text-xl">BTC</p> Bitcoin
+                <p className="font-bold text-[#EEEEEC] text-lg">BTC</p> Bitcoin
               </span>
             </CommandItem>
             <CommandItem>
-              <img src="/coins/usdc.svg" loading="eager" alt="USDC" />
+              <img width={20} height={20} src="/coins/usdc.svg" alt="USDC" />
               <span className="flex items-baseline gap-2 font-semibold text-[13px] m-0 text-[#B5B3AD]">
-                <p className="font-bold text-[#EEEEEC] text-xl">USDC</p> Usdc
+                <p className="font-bold text-[#EEEEEC] text-lg">USDC</p> Usdc
               </span>
             </CommandItem>
             <CommandItem>
-              <img src="/coins/bnb.svg" loading="eager" alt="BNB" />
+              <img width={20} height={20} src="/coins/bnb.svg" alt="BNB" />
               <span className="flex items-baseline gap-2 font-semibold text-[13px] m-0 text-[#B5B3AD]">
-                <p className="font-bold text-[#EEEEEC] text-xl">BNB</p> Binance
+                <p className="font-bold text-[#EEEEEC] text-lg">BNB</p> Binance
                 Coin
               </span>
             </CommandItem>
