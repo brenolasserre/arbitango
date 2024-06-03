@@ -1,54 +1,75 @@
-# Astro Starter Kit: Basics
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="./public/favicon.png" alt="Logo" width="80" height="80">
+  </a>
 
-```sh
-npm create astro@latest -- --template basics
-```
+  <h1 align="center">Arbitango</h1>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+  <p align="center">
+    An awesome README template to jumpstart your projects!
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
+</div>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+El objetivo de este proyecto es construir la fuente de información de datos financieros mas clara y robusta posible para cualquier Argentino que quiera mejorar su salud financiera.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+Puede incluir pero no esta limitado a rendimientos de instrumentos de inversion, comparador de comisiones, indexar sitios o contenido educativo.
 
-## 🚀 Project Structure
+## Principios
 
-Inside of your Astro project, you'll see the following folders and files:
+- Cuando redirijamos a proveedores de servicios estos tienen que ser de buena reputacion, seguros y ofrecer una buena experiencia.
+- Ante un empate siempre priorizar proyectos Argentinos a proyectos del exterior. (ejemplo Binance)
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Para aprender lo básico de Astro, se recomienda el [tutorial oficial](https://docs.astro.build/en/tutorial/0-introduction/).
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Cómo contribuir?
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+El sitio está desarrollado en [Astro](https://astro.build/) y hosteado en Vercel.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Para aprender lo básico de Astro, se recomienda el [tutorial oficial](https://docs.astro.build/en/tutorial/0-introduction/).
 
-## 🧞 Commands
+Para contribuir recomendamos pero no es obligatorio sumarse al [discord](https://discord.gg/dNk89yvXvZ).
 
-All commands are run from the root of the project, from a terminal:
+### Para levantar un ambiente local
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. Clona el repositorio en tu máquina local.
+2. Asegúrate de tener instalado Node.js (versión 14.x o superior) y npm.
+3. En la terminal, navega hasta la carpeta del proyecto y ejecuta `npm install` para instalar las dependencias.
+4. Crea un archivo `.env` y dentro mete la variable `PUBLIC_SUPABASE_KEY=`, el valor pidelo por discord por temas de seguridad.
+5. Una vez finalizada la instalación de dependencias, ejecuta `npm run dev` para iniciar el servidor de desarrollo.
+6. Abre tu navegador y visita `http://localhost:4321` para ver el proyecto en ejecución.
 
-## 👀 Want to learn more?
+### Contribuir con código
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Si deseas contribuir con código, por favor:
+
+1. Revisa los issues abiertos o crea uno nuevo explicando la mejora o el bug a solucionar.
+2. Hace un fork del repositorio.
+3. Crea una nueva rama para tu feature o corrección de bug.
+4. Escribe y prueba tu código.
+5. Asegúrate de seguir las guías de estilo del código existente.
+6. Envía un Pull Request hacia la branch develop con una descripción detallada de los cambios propuestos y referencia el issue relacionado.
+
+### Contribuir con ideas, bugs o feedback
+
+Si tienes ideas, encuentras un bug o quieres dar feedback sobre el proyecto:
+
+- Abre un nuevo issue en el repositorio describiendo tu idea, el bug encontrado o el feedback que deseas compartir.
+- Sé lo más detallado posible en la descripción.
+- Si es posible, incluye capturas de pantalla o cualquier otro recurso que pueda ayudar a entender mejor tu punto.
+
+## ¿Quienes ya contribuyen?
+
+<a href="[https://github.com/ferminrp/compara-tasas/graphs/contributors](https://github.com/brenolasserre/arbitango/graphs/contributors)">
+  <img src="https://contrib.rocks/image?repo=brenolasserre/arbitango" />
+</a>
