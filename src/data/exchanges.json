@@ -1,0 +1,42 @@
+[
+  {
+    "nombre": "Belo",
+    "icon": "/exchanges/belo.webp"
+  },
+  {
+    "nombre": "Binance",
+    "icon": "/exchanges/binance.webp"
+  },
+  {
+    "nombre": "Buenbit",
+    "icon": "/exchanges/buenbit.webp"
+  },
+  {
+    "nombre": "Cocos Crypto",
+    "icon": "/exchanges/cocos.webp"
+  },
+  {
+    "nombre": "Fiwind",
+    "icon": "/exchanges/fiwind.webp"
+  },
+  {
+    "nombre": "Lemon Cash",
+    "icon": "/exchanges/lemon.webp"
+  },
+  {
+    "nombre": "LetsBit",
+    "icon": "/exchanges/letsbit.webp"
+  },
+  {
+    "nombre": "Ripio",
+    "icon": "/exchanges/ripio.webp"
+  },
+  {
+    "nombre": "Satoshi Tango",
+    "icon": "/exchanges/satoshi.webp"
+  },
+  {
+    "nombre": "Tienda Crypto",
+    "icon": "/exchanges/tiendacrypto.webp"
+  }
+]

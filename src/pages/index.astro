@@ -1,16 +1,79 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Stacks from "../components/Stack";
+import Stack from "../components/Stack";
+
+interface Coin {
+  ticker: string;
+  nombre: string;
+  icon: string;
+}
+
+const coinData: Coin[] = [
+  {
+    ticker: "BTC",
+    nombre: "Bitcoin",
+    icon: "/coins/btc.svg",
+  },
+  {
+    ticker: "ETH",
+    nombre: "Ethereum",
+    icon: "/coins/eth.svg",
+  },
+  {
+    ticker: "ADA",
+    nombre: "Cardano",
+    icon: "/coins/ada.svg",
+  },
+  {
+    ticker: "DAI",
+    nombre: "Dai",
+    icon: "/coins/dai.svg",
+  },
+  {
+    ticker: "SOL",
+    nombre: "Solana",
+    icon: "/coins/sol.svg",
+  },
+  {
+    ticker: "BNB",
+    nombre: "Binance Coin",
+    icon: "/coins/bnb.svg",
+  },
+  {
+    ticker: "DOT",
+    nombre: "Polkadot",
+    icon: "/coins/dot.svg",
+  },
+  {
+    ticker: "USDC",
+    nombre: "Usdc",
+    icon: "/coins/usdc.svg",
+  },
+];
 ---
 
 <Layout
   title="Arbitango"
-  metaDescription="Conocé los costos y opciones disponibles para tu negocio."
-  metaKeywords="terminales de cobro, comisiones terminales de cobro, comparar terminales, cobrar con terminal"
+  metaDescription="La web para comprobar en que exchange te conviene."
+  metaKeywords="comparar exchanges crypto, mejor exchange crypto, mejor app para comprar btc"
   metaImage="https://comparatasas.ar/images/cobros.png"
 >
   <section class="mt-[5em]">
-    <Stacks client:idle />
+    <div
+      class="w-full grid lg:grid-cols-4 lg:grid-rows-2 grid-cols-1 grid-rows-4 lg:gap-12 gap-6"
+    >
+      {
+        coinData.map((coin) => (
+          <Stack
+            key={coin.ticker}
+            ticker={coin.ticker}
+            nombre={coin.nombre}
+            icon={coin.icon}
+            client:idle
+          />
+        ))
+      }
+    </div>
   </section>
 </Layout>
 

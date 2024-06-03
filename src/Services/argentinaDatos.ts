@@ -1,4 +1,4 @@
-// import coins from "../data/coins.json";
+import exchanges from "../data/exchanges.json";
 
 const apiEndpoint = "https://api.argentinadatos.com/v1/finanzas/rendimientos/";
 
@@ -16,18 +16,7 @@ const apiEndpoint = "https://api.argentinadatos.com/v1/finanzas/rendimientos/";
       }
      ]
     },
-    {
-    "entidad": "buenbit",
-    "rendimientos": [
-      {
-        "moneda": "ARS",
-        "apy": 0,
-      },
-      {
-        ... More coins
-      }
-     ]
-    },
+    ...
 ]
 */
 
@@ -39,5 +28,14 @@ const getPFData = async () => {
 
 export const getPFInvestments = async () => {
   const data = await getPFData();
-  return data;
+
+  const exchangeNames = new Set(
+    exchanges.map((exchange) => exchange.nombre.toLowerCase())
+  );
+
+  const filteredData = data.filter((item: any) =>
+    exchangeNames.has(item.entidad)
+  );
+
+  return filteredData;
 };

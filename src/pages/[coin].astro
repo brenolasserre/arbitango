@@ -2,7 +2,6 @@
 import { getPFInvestments } from "../Services/argentinaDatos";
 import coinList from "../data/coins.json";
 import Layout from "../layouts/Layout.astro";
-
 interface paramsType {
   params: {
     coin: string;
@@ -80,4 +79,5 @@ const coin = CoinData.find((data: any) => data.nombre === nombre);
         "Inversión a 30 días mínimo, que paga una renta fija asegurada en pesos. Renovable automática o manualmente."
     }
   </p>
+  <script src="../Services/apy.js"></script>
 </Layout>
