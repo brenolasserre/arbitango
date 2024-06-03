@@ -1,72 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Stacks from "../components/Stack";
+import Stack from "../components/Stack";
+import coinData from "../data/coins.json";
 ---
 
 <Layout
   title="Arbitango"
-  metaDescription="Conocé los costos y opciones disponibles para tu negocio."
-  metaKeywords="terminales de cobro, comisiones terminales de cobro, comparar terminales, cobrar con terminal"
+  metaDescription="La web para comprobar en que exchange te conviene."
+  metaKeywords="comparar exchanges crypto, mejor exchange crypto, mejor app para comprar btc"
   metaImage="https://comparatasas.ar/images/cobros.png"
 >
   <section class="mt-[5em]">
-    <Stacks client:idle />
+    <div
+      class="w-full grid lg:grid-cols-4 lg:grid-rows-2 grid-cols-1 grid-rows-4 lg:gap-12 gap-6"
+    >
+      {
+        coinData.map((coin) => (
+          <Stack
+            key={coin.ticker}
+            ticker={coin.ticker}
+            nombre={coin.nombre}
+            icon={coin.icon}
+            client:idle
+          />
+        ))
+      }
+    </div>
   </section>
 </Layout>
-
-<style>
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
-  :root {
-    color-scheme: dark light;
-  }
-
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
-  }
-</style>
