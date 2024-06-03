@@ -1,20 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Stack from "../components/Stack";
+import Stacks from "../components/Stack";
 ---
 
 <Layout title="Arbitango">
-  <section
-    class="mt-[6em] grid lg:grid-cols-4 lg:grid-rows-2 grid-cols-2 grid-rows-4 gap-12"
-  >
-    <Stack client:idle />
-    <Stack client:idle />
-    <Stack client:idle />
-    <Stack client:idle />
-    <Stack client:idle />
-    <Stack client:idle />
-    <Stack client:idle />
-    <Stack client:idle />
+  <section class="mt-[5em]">
+    <Stacks client:idle />
   </section>
 </Layout>
 
