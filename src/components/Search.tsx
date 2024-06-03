@@ -59,23 +59,35 @@ const Search = () => {
           <CommandEmpty>No se encontraron resultados</CommandEmpty>
           <CommandGroup heading="Monedas">
             <CommandItem>
-              <img width={20} height={20} src="/coins/btc.svg" alt="Bitcoin" />
-              <span className="flex items-baseline gap-2 font-semibold text-[13px] m-0 text-[#B5B3AD]">
-                <p className="font-bold text-[#EEEEEC] text-lg">BTC</p> Bitcoin
-              </span>
+              <a href="/btc" className="flex gap-2 w-full px-2 py-3">
+                <img
+                  width={28}
+                  height={28}
+                  src="/coins/btc.svg"
+                  alt="Bitcoin"
+                />
+                <span className="flex items-baseline gap-2 font-semibold text-[13px] m-0 text-[#B5B3AD]">
+                  <p className="font-bold text-[#EEEEEC] text-lg">BTC</p>{" "}
+                  Bitcoin
+                </span>
+              </a>
             </CommandItem>
             <CommandItem>
-              <img width={20} height={20} src="/coins/usdc.svg" alt="USDC" />
-              <span className="flex items-baseline gap-2 font-semibold text-[13px] m-0 text-[#B5B3AD]">
-                <p className="font-bold text-[#EEEEEC] text-lg">USDC</p> Usdc
-              </span>
+              <a href="/usdc" className="flex gap-2 w-full px-2 py-3">
+                <img width={28} height={28} src="/coins/usdc.svg" alt="USDC" />
+                <span className="flex items-baseline gap-2 font-semibold text-[13px] m-0 text-[#B5B3AD]">
+                  <p className="font-bold text-[#EEEEEC] text-lg">USDC</p> Usdc
+                </span>
+              </a>
             </CommandItem>
             <CommandItem>
-              <img width={20} height={20} src="/coins/bnb.svg" alt="BNB" />
-              <span className="flex items-baseline gap-2 font-semibold text-[13px] m-0 text-[#B5B3AD]">
-                <p className="font-bold text-[#EEEEEC] text-lg">BNB</p> Binance
-                Coin
-              </span>
+              <a href="/bnb" className="flex gap-2 w-full px-2 py-3">
+                <img width={28} height={28} src="/coins/bnb.svg" alt="BNB" />
+                <span className="flex items-baseline gap-2 font-semibold text-[13px] m-0 text-[#B5B3AD]">
+                  <p className="font-bold text-[#EEEEEC] text-lg">BNB</p>{" "}
+                  Binance Coin
+                </span>
+              </a>{" "}
             </CommandItem>
           </CommandGroup>
         </CommandList>

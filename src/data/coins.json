@@ -2,41 +2,41 @@
   {
     "ticker": "BTC",
     "nombre": "Bitcoin",
-    "icon": "https://example.com/bitcoin_icon.png"
+    "icon": "/coins/btc.svg"
   },
   {
     "ticker": "ETH",
     "nombre": "Ethereum",
-    "icon": "https://example.com/ethereum_icon.png"
+    "icon": "/coins/eth.svg"
   },
   {
     "ticker": "ADA",
     "nombre": "Cardano",
-    "icon": "https://example.com/ripple_icon.png"
+    "icon": "/coins/ada.svg"
   },
   {
     "ticker": "DAI",
     "nombre": "Dai",
-    "icon": "https://example.com/litecoin_icon.png"
+    "icon": "/coins/dai.svg"
   },
   {
     "ticker": "SOL",
     "nombre": "Solana",
-    "icon": "https://example.com/cardano_icon.png"
+    "icon": "/coins/sol.svg"
   },
   {
     "ticker": "BNB",
     "nombre": "Binance Coin",
-    "icon": "https://example.com/ripple_icon.png"
+    "icon": "/coins/bnb.svg"
   },
   {
     "ticker": "DOT",
     "nombre": "Polkadot",
-    "icon": "https://example.com/litecoin_icon.png"
+    "icon": "/coins/dot.svg"
   },
   {
     "ticker": "USDC",
     "nombre": "Usdc",
-    "icon": "https://example.com/litecoin_icon.png"
+    "icon": "/coins/usdc.svg"
   }
 ]
