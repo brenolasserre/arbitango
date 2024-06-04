@@ -23,7 +23,7 @@ const Stack = (props: any) => {
       {
         id: 3,
         tipo: "Invertí en",
-        title: "",
+        title: "0.00%",
         svg: "",
       },
     ],
