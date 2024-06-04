@@ -1,4 +1,4 @@
-import { getPFInvestments } from "./argentinaDatos.ts";
+import { getPFInvestments } from "./rendimientos.ts";
 
 const logInvestments = async () => {
   const investments = await getPFInvestments();

@@ -2,8 +2,34 @@
 import Layout from "../layouts/Layout.astro";
 import Stack from "../components/Stack";
 import coinData from "../data/coins.json";
+import { getCoins } from "../Services/criptoYa";
+
+const filteredResults = await getCoins();
 ---
 
+<!-- Object
+ada
+: 
+highestBidExchange
+: 
+ask
+: 
+588.14
+bid
+: 
+579.85
+exchange
+: 
+"fiwind"
+time
+: 
+"3/6/2024, 22:42:50"
+totalAsk
+: 
+0.4655042910387219
+totalBid
+: 
+0.4589428761158957 -->
 <Layout
   title="Arbitango"
   metaDescription="La web para comprobar en que exchange te conviene."
@@ -15,15 +41,22 @@ import coinData from "../data/coins.json";
       class="w-full grid lg:grid-cols-4 lg:grid-rows-2 grid-cols-1 grid-rows-4 lg:gap-12 gap-6"
     >
       {
-        coinData.map((coin) => (
-          <Stack
-            key={coin.ticker}
-            ticker={coin.ticker}
-            nombre={coin.nombre}
-            icon={coin.icon}
-            client:idle
-          />
-        ))
+        coinData.map((coin) => {
+          const coinResult = filteredResults[coin.ticker.toLowerCase()];
+          return (
+            <Stack
+              key={coin.ticker}
+              ticker={coin.ticker}
+              nombre={coin.nombre}
+              icon={coin.icon}
+              highestBidExchange={coinResult?.highestBidExchange.exchange}
+              highestBidValue={coinResult?.highestBidExchange.totalBid}
+              lowestAskExchange={coinResult?.lowestAskExchange.exchange}
+              lowestAskValue={coinResult?.lowestAskExchange.totalAsk}
+              client:idle
+            />
+          );
+        })
       }
     </div>
   </section>

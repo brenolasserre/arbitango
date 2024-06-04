@@ -63,18 +63,18 @@ const Search = () => {
                 <img
                   width={28}
                   height={28}
-                  src="/coins/btc.svg"
+                  src="/coins/btc.webp"
                   alt="Bitcoin"
                 />
                 <span className="flex items-baseline gap-2 font-semibold text-[13px] m-0 text-[#B5B3AD]">
-                  <p className="font-bold text-[#EEEEEC] text-lg">BTC</p>{" "}
+                  <p className="font-bold text-[#EEEEEC] text-lg">BTC</p>
                   Bitcoin
                 </span>
               </a>
             </CommandItem>
             <CommandItem>
               <a href="/usdc" className="flex gap-2 w-full px-2 py-3">
-                <img width={28} height={28} src="/coins/usdc.svg" alt="USDC" />
+                <img width={28} height={28} src="/coins/usdc.webp" alt="USDC" />
                 <span className="flex items-baseline gap-2 font-semibold text-[13px] m-0 text-[#B5B3AD]">
                   <p className="font-bold text-[#EEEEEC] text-lg">USDC</p> Usdc
                 </span>
@@ -82,9 +82,9 @@ const Search = () => {
             </CommandItem>
             <CommandItem>
               <a href="/bnb" className="flex gap-2 w-full px-2 py-3">
-                <img width={28} height={28} src="/coins/bnb.svg" alt="BNB" />
+                <img width={28} height={28} src="/coins/bnb.webp" alt="BNB" />
                 <span className="flex items-baseline gap-2 font-semibold text-[13px] m-0 text-[#B5B3AD]">
-                  <p className="font-bold text-[#EEEEEC] text-lg">BNB</p>{" "}
+                  <p className="font-bold text-[#EEEEEC] text-lg">BNB</p>
                   Binance Coin
                 </span>
               </a>{" "}

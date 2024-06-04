@@ -19,7 +19,11 @@ const filterDataByExchangesWithTickerAsParent = (
   const exchangeNames = exchanges.map((exchange) =>
     exchange.nombre.toLowerCase()
   );
-  const filteredData: any = {};
+
+  let highestBidExchange = null;
+  let lowestAskExchange = null;
+  let highestBid = -Infinity;
+  let lowestAsk = Infinity;
 
   for (const [exchange, exchangeData] of Object.entries(data)) {
     if (exchangeNames.includes(exchange.toLowerCase())) {
@@ -28,6 +32,7 @@ const filterDataByExchangesWithTickerAsParent = (
         totalBid: number;
         time: number;
       };
+
       const milliseconds = time * 1000;
       const date = new Date(milliseconds);
       const formattedDate = date.toLocaleString();
@@ -35,15 +40,29 @@ const filterDataByExchangesWithTickerAsParent = (
       const adjustedTotalAsk = dataCrypto !== 0 ? totalAsk / dataCrypto : 0;
       const adjustedTotalBid = dataCrypto !== 0 ? totalBid / dataCrypto : 0;
 
-      filteredData[exchange] = {
+      const exchangeInfo = {
         ...rest,
         totalAsk: adjustedTotalAsk,
         totalBid: adjustedTotalBid,
         time: formattedDate,
       };
+
+      if (adjustedTotalBid > highestBid) {
+        highestBid = adjustedTotalBid;
+        highestBidExchange = { exchange, ...exchangeInfo };
+      }
+
+      if (adjustedTotalAsk < lowestAsk) {
+        lowestAsk = adjustedTotalAsk;
+        lowestAskExchange = { exchange, ...exchangeInfo };
+      }
     }
   }
-  return { ...filteredData };
+
+  return {
+    highestBidExchange,
+    lowestAskExchange,
+  };
 };
 
 export const getCoins = async () => {

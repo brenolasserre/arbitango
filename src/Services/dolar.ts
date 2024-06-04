@@ -3,7 +3,7 @@ export async function getDolar() {
     const response = await fetch("https://criptoya.com/api/dolar");
     if (!response.ok) {
       throw new Error(
-        "Error al obtener los datos de la API de GitHub. " + response.status
+        "Error al obtener la cotizacion del dolar. " + response.status
       );
     }
     const data = await response.json();
@@ -17,7 +17,7 @@ export async function getDolar() {
 
 async function main() {
   try {
-    const dataCrypto = await getDolar();
+    const dataCrypto = 1600;
   } catch (error) {
     console.error(error);
   }
