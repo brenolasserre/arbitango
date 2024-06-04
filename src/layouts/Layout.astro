@@ -17,7 +17,7 @@ const { title, metaDescription, metaImage, metaKeywords } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -43,13 +43,19 @@ const { title, metaDescription, metaImage, metaKeywords } = Astro.props;
       <div class="w-full">
         <nav class="flex justify-between items-center text-[#777777]">
           <a href="/">
-            <img src="/favicon.png" alt="Arbitango" width="52" height="52" /></a
+            <img
+              src="/favicon.webp"
+              alt="Arbitango"
+              width="52"
+              height="52"
+            /></a
           >
           <Search client:load />
 
           <a
             class="hover:text-white transition-all"
             target="_blank"
+            aria-label="Link al Github Repo"
             href="https://github.com/brenolasserre/arbitango"
           >
             <svg width="25" height="25" fill="none"

@@ -9,20 +9,22 @@ const Stack = (props: any) => {
       {
         id: 1,
         tipo: "Comprá en",
-        title: "Cocos Crypto",
-        svg: "/exchanges/cocos.webp",
+        title: props.highestBidExchange,
+        value: props.highestBidValue,
+        svg: " ",
       },
       {
         id: 2,
         tipo: "Vendé en",
-        title: "Ripio",
-        svg: "/exchanges/ripio.webp",
+        title: props.lowestAskExchange,
+        value: props.lowestAskValue,
+        svg: " ",
       },
       {
         id: 3,
         tipo: "Invertí en",
-        title: "Binance",
-        svg: "/exchanges/binance.webp",
+        title: "",
+        svg: "",
       },
     ],
     []
@@ -36,24 +38,30 @@ const Stack = (props: any) => {
     setCurrentCard((prevCard) => (prevCard - 1 + cards.length) % cards.length);
   }, [cards.length]);
 
+  const lowercaseTicker = props.ticker.toLowerCase();
+
   return (
     <div key={props.ticker} className="flex-col flex">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img
-            loading="eager"
-            width={32}
-            height={32}
-            src={props.icon}
-            alt={props.nombre}
-          />
-          <div className="flex items-baseline gap-2">
-            <h5 className="font-bold text-[#EEEEEC] text-xl">{props.ticker}</h5>
-            <p className="font-semibold text-[13px] m-0 text-[#B5B3AD]">
-              {props.nombre}
-            </p>
+        <a href={lowercaseTicker}>
+          <div className="flex items-center gap-2">
+            <img
+              loading="eager"
+              width={32}
+              height={32}
+              src={props.icon}
+              alt={props.nombre}
+            />
+            <div className="flex items-baseline gap-2">
+              <h5 className="font-bold text-[#EEEEEC] text-xl">
+                {props.ticker}
+              </h5>
+              <p className="font-semibold text-[13px] m-0 text-[#B5B3AD]">
+                {props.nombre}
+              </p>
+            </div>
           </div>
-        </div>
+        </a>
 
         <div className="relative flex w-fit justify-center">
           <motion.button
@@ -184,7 +192,7 @@ const Stack = (props: any) => {
                     <p className="leading-3 text-[#7d7d7d] text-xs font-medium">
                       {props.ticker} 1,00
                     </p>
-                    <p className="text-[#CFD1DA] font-semibold">$60.842,50</p>
+                    <p className="text-[#CFD1DA] font-semibold">{card.value}</p>
                   </div>
                 </div>
               </motion.div>
