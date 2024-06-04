@@ -16,17 +16,19 @@ const filterDataByExchangesWithTickerAsParent = (
   data: any,
   dataCrypto: number
 ) => {
-  const exchangeNames = exchanges.map((exchange) =>
-    exchange.nombre.toLowerCase()
-  );
+  const exchangeDetails = exchanges.reduce((acc, exchange) => {
+    acc[exchange.nombre.toLowerCase()] = exchange;
+    return acc;
+  }, {} as { [key: string]: { nombre: string; icon: string } });
 
-  let highestBidExchange = null;
-  let lowestAskExchange = null;
+  let highestBidExchange: any = null;
+  let lowestAskExchange: any = null;
   let highestBid = -Infinity;
   let lowestAsk = Infinity;
 
   for (const [exchange, exchangeData] of Object.entries(data)) {
-    if (exchangeNames.includes(exchange.toLowerCase())) {
+    const exchangeKey = exchange.toLowerCase();
+    if (exchangeDetails[exchangeKey]) {
       const { totalAsk, totalBid, time, ...rest } = exchangeData as {
         totalAsk: number;
         totalBid: number;
@@ -45,6 +47,7 @@ const filterDataByExchangesWithTickerAsParent = (
         totalAsk: adjustedTotalAsk,
         totalBid: adjustedTotalBid,
         time: formattedDate,
+        icon: exchangeDetails[exchangeKey].icon,
       };
 
       if (adjustedTotalBid > highestBid) {
@@ -57,6 +60,18 @@ const filterDataByExchangesWithTickerAsParent = (
         lowestAskExchange = { exchange, ...exchangeInfo };
       }
     }
+  }
+
+  // Format totalAsk and totalBid to two decimals
+  if (highestBidExchange) {
+    highestBidExchange.totalBid = parseFloat(
+      highestBidExchange.totalBid.toFixed(2)
+    );
+  }
+  if (lowestAskExchange) {
+    lowestAskExchange.totalAsk = parseFloat(
+      lowestAskExchange.totalAsk.toFixed(2)
+    );
   }
 
   return {

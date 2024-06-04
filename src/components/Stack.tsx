@@ -11,19 +11,20 @@ const Stack = (props: any) => {
         tipo: "Comprá en",
         title: props.highestBidExchange,
         value: props.highestBidValue,
-        svg: " ",
+        svg: props.iconExchangeBid,
       },
       {
         id: 2,
         tipo: "Vendé en",
         title: props.lowestAskExchange,
         value: props.lowestAskValue,
-        svg: " ",
+        svg: props.iconExchangeAsk,
       },
       {
         id: 3,
         tipo: "Invertí en",
-        title: "",
+        title: "Exchange",
+        value: "0.00%",
         svg: "",
       },
     ],
@@ -192,7 +193,9 @@ const Stack = (props: any) => {
                     <p className="leading-3 text-[#7d7d7d] text-xs font-medium">
                       {props.ticker} 1,00
                     </p>
-                    <p className="text-[#CFD1DA] font-semibold">{card.value}</p>
+                    <p className="text-[#CFD1DA] font-semibold">
+                      ${card.value}
+                    </p>
                   </div>
                 </div>
               </motion.div>

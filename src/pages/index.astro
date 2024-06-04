@@ -7,34 +7,11 @@ import { getCoins } from "../Services/criptoYa";
 const filteredResults = await getCoins();
 ---
 
-<!-- Object
-ada
-: 
-highestBidExchange
-: 
-ask
-: 
-588.14
-bid
-: 
-579.85
-exchange
-: 
-"fiwind"
-time
-: 
-"3/6/2024, 22:42:50"
-totalAsk
-: 
-0.4655042910387219
-totalBid
-: 
-0.4589428761158957 -->
 <Layout
   title="Arbitango"
-  metaDescription="La web para comprobar en que exchange te conviene."
+  metaDescription="Compara precios de Bitcoin, Ethereum y más en diferentes exchanges. Arbitango, la plataforma Argentina para el arbitraje de criptomonedas."
   metaKeywords="comparar exchanges crypto, mejor exchange crypto, mejor app para comprar btc"
-  metaImage="https://comparatasas.ar/images/cobros.png"
+  metaImage="/ad.webp"
 >
   <section class="mt-[5em]">
     <div
@@ -49,6 +26,8 @@ totalBid
               ticker={coin.ticker}
               nombre={coin.nombre}
               icon={coin.icon}
+              iconExchangeAsk={coinResult?.lowestAskExchange?.icon}
+              iconExchangeBid={coinResult?.highestBidExchange?.icon}
               highestBidExchange={coinResult?.highestBidExchange.exchange}
               highestBidValue={coinResult?.highestBidExchange.totalBid}
               lowestAskExchange={coinResult?.lowestAskExchange.exchange}

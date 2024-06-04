@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="./public/favicon.png" alt="Logo" width="80" height="80">
+    <img src="./public/favicon.webp" alt="Logo" width="80" height="80">
   </a>
 
   <h1 align="center">Arbitango</h1>
